@@ -17,7 +17,7 @@
     <script src="${bjs}/bootstrap.min.js"></script>
     <script src="${bjs}/angular.min.js"></script>
     
-     <script>
+      <script>
         var myApp=angular.module('myApp', [])
 
         myApp.controller('jsonCtrl', function($scope,$http) {
@@ -35,55 +35,58 @@
         	      
         });
         </script>
+<div style="height: 50px"></div>
+<div class="container text-center" style="width: 500px">
 
-</head>
-<body>
-<h1>
-    Add a Person
-</h1>
-
-<c:url var="addAction" value="/admin/add" ></c:url>
- 
-<form:form action="${addAction}" commandName="product" modelAttribute="product">
+<form:form action="addnewproduct" commandName="product" modelAttribute="product" method="post" class="form-horizontal" role="form">
 <table>
     <c:if test="${!empty product.pdctID}">
     <tr style="padding: 10px;">
         <td>
-        </td>
+ID        </td>
         <td>
-            <form:input path="pdctID" readonly="true" size="8"  disabled="true" ng-model="pdctID" class="form-control"/>
+            <form:input path="pdctID" readonly="true" size="8"  disabled="true" ng-model="pid" class="form-control"/>
            	<form:hidden path="pdctID" />
         </td> 
          <td><form:errors path="pdctID" cssStyle="color: #c0392b;"/></td>
     </tr>
     </c:if>
     <tr>
-    <td>
+        <td>
+            category
+        </td>
+        <td>
             <form:input path="category" ng-model="category" class="form-control"/>
         </td> 
         <td><form:errors path="category" cssStyle="color: #c0392b;"/></td>
     </tr>
-      <tr>
-    <td>
-            <form:input path="brand" ng-model="brand" class="form-control"/>
-        </td> 
+    <tr>
+        <td>
+            Brand        </td>
+        <td>
+            <form:input path="brand" ng-model="brand"  class="form-control"/>
+        </td>
         <td><form:errors path="brand" cssStyle="color: #c0392b;"/></td>
     </tr>
-    <tr>
-      <td>
-            <form:input path="price" ng-model="price" class="form-control"/>
-        </td> 
+        <tr>
+        <td>
+            Price
+        </td>
+        <td>
+         <td>
+            <form:input path="price" ng-model="price"  class="form-control"/>
+        </td>
         <td><form:errors path="price" cssStyle="color: #c0392b;"/></td>
-    </tr>
-    <tr>
+        </tr>
+           <tr>
         <td colspan="2">
             <c:if test="${!empty product.category}">
-<button type="submit" class="btn" style="margin: 0px;width:100px; background-color: #00A2E8; color:white; text-align: center; font-size: 015x; border-radius: 0px;"
-                    >EDIT</button>
+                <button type="submit" class="btn" style="margin: 0px;width:100px; background-color: #00A2E8; color:white; text-align: center; font-size: 015x; border-radius: 0px;"
+                    >Edit Product</button>
             </c:if>
             <c:if test="${empty product.category}">
                 <button type="submit" class="btn" style="margin: 0px;width:100px; background-color: #00A2E8; color:white; text-align: center; font-size: 015x; border-radius: 0px;"
-                 >ADD</button>
+                 >Add Product</button>
             </c:if>
         </td>
     </tr>
@@ -92,8 +95,8 @@
 
 </div>
 
-<br>
-<h3>Product List</h3>
+
+
 <div class="container" ng-app="myApp" ng-controller="jsonCtrl" style="padding-top:30px">
    
   <table class="table table-bordered table-striped">
@@ -110,7 +113,7 @@
         </td>
         <td>
           <a href="#" ng-click="sortType = 'category'; sortReverse = !sortReverse">
-          Category
+          Product Name
             <span ng-show="sortType == 'category' && !sortReverse" class="glyphicon glyphicon-arrow-up"></span>
             <span ng-show="sortType == 'category' && sortReverse" class="glyphicon glyphicon-arrow-down"></span>
           </a>
@@ -129,13 +132,13 @@
             <span ng-show="sortType == 'price' && sortReverse" class="glyphicon glyphicon-arrow-down"></span>
           </a>
         </td>
-        <td>
-          <a href="/admin/edit">
+            <td>
+          <a href="#">
          	Edit
           </a>
         </td>
         <td>
-          <a href="/admin/delete">
+          <a href="#">
          	Delete
           </a>
         </td>
@@ -144,19 +147,18 @@
     
     <tbody>
     
-      <tr ng-repeat="scope in dress | orderBy:sortType:sortReverse | filter:searchDress">
+      <tr ng-repeat="scop in dress | orderBy:sortType:sortReverse | filter:searchMusic">
          
-        <td>{{scope.pdctID}}</td>
-        <td>{{scope.category}}</td>
-        <td>{{scope.brand}}</td>
-        <td>{{scope.price}}</td>
-      
-        <td>
-        <form action="adminedit" method="post">
-      	<input type="hidden" value={{scope.pdctID}} name="PdctID"/>
-        <input type="hidden" value={{scope.category}} name="Category"/>
-        <input type="hidden" value={{scope.brand}} name="Brand"/>
-        <input type="hidden" value={{scope.price}} name="Price"/>
+        <td>{{scop.pdctID}}</td>
+        <td>{{scop.category }}</td>
+        <td>{{scop.brand}}</td>
+        <td>{{scop.price}}</td>
+       <td>
+        <form action="editproduct" method="post">
+      	<input type="hidden" value={{scop.pdctID}} name="pdctID"/>
+        <input type="hidden" value={{scop.category}} name="category"/>
+        <input type="hidden" value={{scop.brand}} name="brand"/>
+        <input type="hidden" value={{scop.price}} name="price"/>
          <button type="submit" class="btn" style="margin: 0px;width:100px;  text-align: center; font-size: 015x; border-radius: 0px;"
                     >
         Edit &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></span>
@@ -164,12 +166,12 @@
       </form>
        </td>
        <td>
-        <form action="admindelete" method="post">
-      	<input type="hidden" value={{scope.pdctID}} name="PdctID"/>
-        <input type="hidden" value={{scope.category}} name="Category"/>
-        <input type="hidden" value={{scope.brand}} name="Brand"/>
-        <input type="hidden" value={{scope.price}} name="Price"/>
-       <button type="submit" class="btn" style="margin: 0px;width:100px;  text-align: center; font-size: 015x; border-radius: 0px;"
+        <form action="deleteproduct" method="post">
+     <input type="hidden" value={{scop.pdctID}} name="pdctID"/>
+        <input type="hidden" value={{scop.category}} name="category"/>
+        <input type="hidden" value={{scop.brand}} name="brand"/>
+        <input type="hidden" value={{scop.price}} name="price"/>
+      <button type="submit" class="btn" style="margin: 0px;width:100px; text-align: center; font-size: 015x; border-radius: 0px;"
                     >
         Delete &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-remove"></span>
         </button>
@@ -182,5 +184,6 @@
   </table>
 
  </div>
+
  </body>
 </html>

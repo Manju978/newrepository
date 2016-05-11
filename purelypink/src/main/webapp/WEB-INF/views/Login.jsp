@@ -84,14 +84,14 @@
       <p>Current Project</p>
     </div>
                      <div class="col-sm-6">
-                    <form role="form">
+                    <form role="form" action="perform_login" method="post">
   <div class="form-group">
     <label for="uname">PurelyPink User:</label>
-    <input type="text" class="form-control" id="uname">
+    <input type="text" class="form-control" name="username" id="uname">
   </div>
   <div class="form-group">
     <label for="pwd">PurelyPink passcode:</label>
-    <input type="password" class="form-control" id="pwd">
+    <input type="password" class="form-control" name="password" id="pwd">
   </div>
   <div class="checkbox">
     <label><input type="checkbox"> Remember me</label>

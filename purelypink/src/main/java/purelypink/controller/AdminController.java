@@ -3,6 +3,8 @@ package purelypink.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,22 +45,28 @@ public String hello(Model model)
 	return "admin";
     
 }
-//For add and update product both
-@RequestMapping(value = "/admin/add", method = RequestMethod.POST)
-public String submit(@ModelAttribute("product")ProductModel product,ModelMap model) 
-{
-	if(product.getPdctID() == 0){
-          model.addAttribute("product",product);
+@RequestMapping(value = "/addnewproduct", method = RequestMethod.POST)
+public String submit(@Valid @ModelAttribute("product")ProductModel product, 
+  BindingResult result, ModelMap model) {
+	if(result.hasErrors())
+	   {
+	        return "admin";
+	   }   
+	   
+
+	if(product.getPdctID()== 0)
+	{
+          
+		model.addAttribute("product", product);
 	      pservice.addProduct(product);
 	      ArrayList<ProductModel> p= (ArrayList<ProductModel>) pservice.getproductlist();
 			Gson gson=new Gson();
 			String json=gson.toJson(p);
 			System.out.println("ajson: "+json);
 			model.addAttribute("productList",json);
-	   
-	        return "admin";
-	   
-    }else{
+	       }
+	else
+	{
        
     	model.addAttribute("product", product);
         pservice.updateProduct(product);
@@ -67,34 +75,40 @@ public String submit(@ModelAttribute("product")ProductModel product,ModelMap mod
   		String json=gson.toJson(p);
   		System.out.println("ajson: "+json);
   		model.addAttribute("productList",json);
-        }
+        
+          return "admin";
+        
+      	  }
 	return "admin";
 }
 
-@RequestMapping(value = "/admin/admindelete", method = RequestMethod.POST)
-public String delete(@ModelAttribute("product")ProductModel product, ModelMap model) {
+@RequestMapping(value = "/deleteproduct", method = RequestMethod.POST)
+public String delete(@ModelAttribute("product")ProductModel product, 
+  BindingResult result, ModelMap model) {
   model.addAttribute("product", product);
   pservice.removeProduct(product.getPdctID());
   ArrayList<ProductModel> p= (ArrayList<ProductModel>) pservice.getproductlist();
 	Gson gson=new Gson();
 	String json=gson.toJson(p);
-	//System.out.println("ajson: "+json);
-	model.addAttribute("productList",json);
-
+	System.out.println("ajson: "+json);
+	model.addAttribute("list",json);
+  
     return "admin";
+
 }
-@RequestMapping(value = "/admin/adminedit", method = RequestMethod.POST)
-public String edit(@ModelAttribute("product")ProductModel product,ModelMap model) {
+@RequestMapping(value = "/editproduct", method = RequestMethod.POST)
+public String edit(@ModelAttribute("product")ProductModel product, 
+  BindingResult result, ModelMap model) {
   model.addAttribute("product", product);
   pservice.updateProduct(product);
   ArrayList<ProductModel> p= (ArrayList<ProductModel>) pservice.getproductlist();
 	Gson gson=new Gson();
 	String json=gson.toJson(p);
-	//System.out.println("ajson: "+json);
+	System.out.println("ajson: "+json);
 	model.addAttribute("productList",json);
 	Gson g=new Gson();
 	String j=g.toJson(product);
-	model.addAttribute("productList",j);
+	model.addAttribute("productList",json);
     return "admin";
 }
 
