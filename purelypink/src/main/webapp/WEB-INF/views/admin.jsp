@@ -94,7 +94,10 @@ ID        </td>
 </form:form>
 
 </div>
-
+<form action="upload" method="post">
+<button type="submit" class="btn" style="margin: 0px;width:100px; background-color: #00A2E8; color:white; text-align: center; font-size: 015x; border-radius: 0px;"
+>FILE UPLOAD</button>
+</form>
 
 
 <div class="container" ng-app="myApp" ng-controller="jsonCtrl" style="padding-top:30px">
@@ -182,8 +185,6 @@ ID        </td>
     </tbody>
     
   </table>
-<form action="upload" method="post">
-<input type="submit"/></form>
  </div>
 
  </body>

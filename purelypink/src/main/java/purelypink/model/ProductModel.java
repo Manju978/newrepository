@@ -20,7 +20,7 @@ public class ProductModel implements Serializable
 @GeneratedValue(strategy=GenerationType.AUTO)
 private int pdctID;
 @NotNull
-@Size(min=5,max=20,message="Please enter a product category having letters between 5 to 12")
+@Size(min=5,max=20,message="Please enter a product category having letters between 5 to 20")
 private String category;
 @NotNull
 @Size(min=1,max=20,message="should not be blank")
