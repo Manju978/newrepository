@@ -14,10 +14,18 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 public class FileUploadController
 {
+	@RequestMapping("/upload")
+	public String hello()
+	{
+		
+		return "upload";
+	
+	}
 	 @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
 	    public @ResponseBody
-	    String uploadFileHandler(@RequestParam("name") String name,
-	            @RequestParam("file") MultipartFile file) {
+	    String uploadFileHandler(@RequestParam("uname") String name,
+	            @RequestParam("file") MultipartFile file) 
+	 {
 	 
 	        if (!file.isEmpty()) {
 	            try {
@@ -44,6 +52,7 @@ public class FileUploadController
 	            return "You failed to upload " + name
 	                    + " because the file was empty.";
 	        }
+	        
 	    }
 
 }

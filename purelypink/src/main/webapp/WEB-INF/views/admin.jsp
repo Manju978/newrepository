@@ -182,7 +182,8 @@ ID        </td>
     </tbody>
     
   </table>
-
+<form action="upload" method="post">
+<input type="submit"/></form>
  </div>
 
  </body>
