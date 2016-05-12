@@ -1,3 +1,4 @@
+<%@page import="purelypink.model.ProductModel"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -84,99 +85,25 @@
    <!--   <script src="resources/bootstrap/js/ptable.js"></script>-->
 </head>
 <body>
-    
+    <c:url value="D:\apache-tomcat-8.0.33-windows-x64\apache-tomcat-8.0.33\tmpFiles" var="pdimg" />
         <div class="container">
                         <h3>Be Pretty in Pink</h3>                       
          </div>
    <div class="col-sm-3">
-      <img src="resources/bootstrap/img/items.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Search Here.. <span class="glyphicon glyphicon-hand-right"></span></p>
+      <img src="${pdimg}/${product.pdctID}.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <p>${product.pdctID}<span class="glyphicon glyphicon-hand-up"></span></p>
     </div>
                      <div class="col-sm-9">
 <div class="container" ng-app="sortApp" ng-controller="mainController">
 
-    
-  <form>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        <input type="text" class="form-control" placeholder="Search in PurelyPink" ng-model="searchPink">
-      </div>      
-    </div>
-  </form>
-  <table class="table table-bordered table-striped">
-<thead>
-      <tr>
-        <td>
-          <a href="#" ng-click="sortType = 'id'; sortReverse = !sortReverse">
-            PdctID
-            <span ng-show="sortType == 'id' && !sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-            <span ng-show="sortType == 'id' && sortReverse" class="glyphicon glyphicon-arrow-down"></span>         
-          </a>
-        </td>
-        <td>
-          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-          Category
-            <span ng-show="sortType == 'name' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
-            <span ng-show="sortType == 'name' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-          </a>
-        </td>
-        <td>
-          <a href="#" ng-click="sortType = 'brand'; sortReverse = !sortReverse">
-         Brand
-            <span ng-show="sortType == 'brand' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
-            <span ng-show="sortType == 'brand' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-          </a>
-        </td>
-         <td>
-    <a href="#" ng-click="sortType = 'price'; sortReverse = !sortReverse">
-  
-         Price
-            <span ng-show="sortType == 'price' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
-            <span ng-show="sortType == 'price' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-          </a>
-        </td>
- <td>
-    <a href="#" ng-click="sortType = 'more'; sortReverse = !sortReverse">
-  
-         MoreInfo
-            <span ng-show="sortType == 'more' && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
-            <span ng-show="sortType == 'more' && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
-          </a>
-        </td>
-
-
-      </tr>
-           </tr>
-      
-    </thead> 
-    <tbody>
-   
-      <tr ng-repeat="dres in dress | orderBy:sortType:sortReverse | filter:searchPink">
-        <td>{{dres.pdctID}}</td>
-        <td>{{dres.category}}</td>
-        <td>{{dres.brand}}</td>
-       <td>{{dres.price}}</td>
- <td>
-        <form action="productdetails">
-      	<input type="hidden" value={{dres.pdctID}} name="pdctID"/>
-        <input type="hidden" value={{dres.category}} name="category"/>
-        <input type="hidden" value={{dres.brand}} name="brand"/>
-        <input type="hidden" value={{dres.price}} name="price"/>
-         <button type="submit" class="btn" style="margin: 0px;width:100px;  text-align: center; font-size: 015x; border-radius: 0px;">
-        More &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-expand"></span>
-        </button>
-      </form>
-       </td>
-            </tr>
-   
-      </form>
-    </tbody>
-  </table>  
+        
+      <h1>Product : ${product.category}</h1><br>
+       <h4>ID :  ${product.pdctID}</h4><br>
+        <h4> Price in INR : ${product.price}</h4><br>
+        <h4>Brand you have Chosen : ${product.brand}</h4><br>
     </div>                
                 </div>
             </div>
-
         </div>
         <!-- /.container -->
 

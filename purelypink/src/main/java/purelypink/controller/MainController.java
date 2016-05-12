@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
@@ -59,5 +63,28 @@ public class MainController
 		return mv;
 
 	}
+	@RequestMapping("/productdetails")
+	public String hello5(@ModelAttribute("product") ProductModel product,BindingResult res,ModelMap m)
+	{
+		ModelAndView model=new ModelAndView("productdetails");	
+m.addAttribute("product",product);
+//m.addAttribute("p1",product);
+		return "productdetails";
 
+	}
+	@RequestMapping("/shoppingcart")
+	public String hello6()
+	{
+		return "shoppingcart";
+	}
+	@RequestMapping("/address")
+	public String hello7()
+	{
+		return "address";
+	}
+	@RequestMapping("/submission")
+	public String hello8()
+	{
+		return "submission";
+	}
 }

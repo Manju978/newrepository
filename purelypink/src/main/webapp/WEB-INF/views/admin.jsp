@@ -77,7 +77,9 @@ ID        </td>
             <form:input path="price" ng-model="price"  class="form-control"/>
         </td>
         <td><form:errors path="price" cssStyle="color: #c0392b;"/></td>
+        
         </tr>
+        
            <tr>
         <td colspan="2">
             <c:if test="${!empty product.category}">
@@ -94,7 +96,9 @@ ID        </td>
 </form:form>
 
 </div>
-<form action="upload" method="post">
+<form action="uploadFile" method="post" enctype="multipart/form-data">
+ Image to upload for the products: <input type="file" name="file"><br /> 
+       Please Enter ProductID: <input type="text" name="uname"><br /> <br /> 
 <button type="submit" class="btn" style="margin: 0px;width:100px; background-color: #00A2E8; color:white; text-align: center; font-size: 015x; border-radius: 0px;"
 >FILE UPLOAD</button>
 </form>

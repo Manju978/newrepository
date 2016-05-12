@@ -39,12 +39,12 @@ public class FileUploadController
 	 
 	                // Create the file on server
 	                File serverFile = new File(dir.getAbsolutePath()
-	                        + File.separator + name);
+	                        + File.separator + name+".jpg");
 	                BufferedOutputStream stream = new BufferedOutputStream(
 	                        new FileOutputStream(serverFile));
 	                stream.write(bytes);
 	                stream.close();
-	                return "You successfully uploaded file=" + name;
+	                return "You successfully uploaded file=" + name+".jpg";
 	            } catch (Exception e) {
 	                return "You failed to upload " + name + " => " + e.getMessage();
 	            }
