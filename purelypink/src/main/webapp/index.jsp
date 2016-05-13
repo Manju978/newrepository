@@ -38,7 +38,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav">Purely Pink</a>
+                <a class="navbar-brand topnav"><img src="resources/bootstrap/img/logo.jpg" height="100" width="100"/>Purely Pink
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

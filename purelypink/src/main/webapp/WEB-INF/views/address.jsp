@@ -8,6 +8,10 @@
 </head>
 <body>
 <form action="submission">
+Address Line1 : <input type="text" name="adr1"/><br>
+Address Line2 : <input type="text" name="adr2"/><br>
+Pin : <input type="text" name="pin"/><br>
+Phone : <input type="text" name="phne"/><br>
 <input type="submit" value="Place Order"/>
 </form>
 </body>

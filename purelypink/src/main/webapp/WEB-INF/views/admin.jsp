@@ -166,7 +166,7 @@ ID        </td>
         <input type="hidden" value={{scop.category}} name="category"/>
         <input type="hidden" value={{scop.brand}} name="brand"/>
         <input type="hidden" value={{scop.price}} name="price"/>
-         <button type="submit" class="btn" style="margin: 0px;width:100px;  text-align: center; font-size: 015x; border-radius: 0px;"
+        <button type="submit" class="btn" style="margin: 0px;width:100px;  text-align: center; font-size: 015x; border-radius: 0px;"
                     >
         Edit &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></span>
         </button>

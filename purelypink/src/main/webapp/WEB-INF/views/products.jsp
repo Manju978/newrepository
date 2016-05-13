@@ -157,27 +157,22 @@
         <td>{{dres.category}}</td>
         <td>{{dres.brand}}</td>
        <td>{{dres.price}}</td>
- <td>
+       <td>
         <form action="productdetails">
       	<input type="hidden" value={{dres.pdctID}} name="pdctID"/>
         <input type="hidden" value={{dres.category}} name="category"/>
         <input type="hidden" value={{dres.brand}} name="brand"/>
         <input type="hidden" value={{dres.price}} name="price"/>
-         <button type="submit" class="btn" style="margin: 0px;width:100px;  text-align: center; font-size: 015x; border-radius: 0px;">
+        <button type="submit" class="btn" style="margin: 0px;width:100px;  text-align: center; font-size: 015x; border-radius: 0px;">
         More &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-expand"></span>
         </button>
-      </form>
+      	</form>
        </td>
-            </tr>
-   
-      </form>
+      </tr>
     </tbody>
   </table>  
     </div>                
                 </div>
-            </div>
-
-        </div>
         <!-- /.container -->
 
     

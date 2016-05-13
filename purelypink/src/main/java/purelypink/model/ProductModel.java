@@ -1,6 +1,5 @@
 package purelypink.model;
 
-
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -65,7 +64,6 @@ private String price;
 
  public ProductModel() 
 {
-	// TODO Auto-generated constructor stub
-	
-}
+	 
  }
+}

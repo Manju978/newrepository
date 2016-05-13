@@ -17,7 +17,13 @@
 <bean id="hibernateSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="annotatedClasses">
-			<list><value>purelypink.model.ProductModel</value></list>
+			<list>
+			<value>purelypink.model.ProductModel</value>
+			<value>purelypink.model.Address</value>
+			<value>purelypink.model.Cart</value>
+			<value>purelypink.model.Item</value>
+			<value>purelypink.model.UserDetails</value>
+			</list>
 		</property>
 		<property name="hibernateProperties">
 			<props>

@@ -1,4 +1,3 @@
-<%@page import="purelypink.model.ProductModel"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,17 +18,10 @@
     <!-- Custom CSS -->
     <link href="resources/bootstrap/css/landing-page.css" rel="stylesheet">
 
-    <script src="${bjs}/angular.min.js"></script>
+    
     <link href="resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-    angular.module('sortApp', [])
-    .controller('mainController', function($scope)
-    		{
-      // create the list  
-      $scope.dress = <%=request.getAttribute("productList")%>
-    });    
-    </script>
+
 </head>
 
 <body>
@@ -81,42 +73,51 @@
 
     <!-- Header -->
     <!-- /.intro-header -->
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-   <!--   <script src="resources/bootstrap/js/ptable.js"></script>-->
 </head>
 <body>
-    <c:url value="D:\apache-tomcat-8.0.33-windows-x64\apache-tomcat-8.0.33\tmpFiles" var="pdimg" />
+    
         <div class="container">
                         <h3>Be Pretty in Pink</h3>                       
          </div>
-   <div class="col-sm-3">
-      <img src="${pdimg}/${product.pdctID}.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>${product.pdctID}<span class="glyphicon glyphicon-hand-up"></span></p>
+   <div class="col-sm-6">
+      <img src="resources/bootstrap/img/registerimage.jpg" class="img-responsive" style="width:100%" alt="Image">
+      
     </div>
-                     <div class="col-sm-9">
-<div class="container" ng-app="sortApp" ng-controller="mainController">
-
-        
-      <h1>Product : ${product.category}</h1><br>
-       <h4>ID :  ${product.pdctID}</h4><br>
-        <h4> Price in INR : ${product.price}</h4><br>
-        <h4>Brand you have Chosen : ${product.brand}</h4><br>
+                     <div class="col-sm-6">
+      <form  class="form-" role="form">
+  <div class="form-group">
+    <label for="uname">New Pink User:</label>
+    <input type="text" class="form-control" id="uname">
+  </div>
+  <div class="form-group">
+    <label for="phone">My Number:</label>
+    <input type="text" class="form-control" id="num">
+  </div>
+   <div class="form-group">
+    <label for="email">Mail me:</label>
+    <input type="text" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">PassWord:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="form-group">
+    <label for="rpwd">Once More Please:</label>
+    <input type="password" class="form-control" id="rpwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> I Agree</label>
+  </div>
+  <button type="submit" class="btn btn-default">Register Me</button>
+</form>
     </div>                
                 </div>
             </div>
+
         </div>
         <!-- /.container -->
 
-    <div>
-    <form action="cartFlow">
-    <input type="hidden" value=${product.pdctID} name="pdctID"/>
-        <input type="hidden" value=${product.category} name="category"/>
-        <input type="hidden" value=${product.brand} name="brand"/>
-        <input type="hidden" value=${product.price} name="price"/>
-        
-    <input type="submit" value="Add to Cart">
-    </form>
-    </div>
+    
 
 </body>
 </html>

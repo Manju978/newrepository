@@ -47,6 +47,12 @@ public class MainController
 		ModelAndView model=new ModelAndView("Register");	
 		return model;
 	}
+	@RequestMapping("/aboutus")
+	public ModelAndView hai()
+	{
+		ModelAndView model=new ModelAndView("aboutus");	
+		return model;
+	}
 	
 	@RequestMapping("/products")
 	public ModelAndView hello2(Model model)
@@ -67,8 +73,8 @@ public class MainController
 	public String hello5(@ModelAttribute("product") ProductModel product,BindingResult res,ModelMap m)
 	{
 		ModelAndView model=new ModelAndView("productdetails");	
-m.addAttribute("product",product);
-//m.addAttribute("p1",product);
+		model.addObject("product", product);
+		//m.addAttribute("p1",product);
 		return "productdetails";
 
 	}

@@ -1,4 +1,3 @@
-<%@page import="purelypink.model.ProductModel"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,17 +18,10 @@
     <!-- Custom CSS -->
     <link href="resources/bootstrap/css/landing-page.css" rel="stylesheet">
 
-    <script src="${bjs}/angular.min.js"></script>
+    
     <link href="resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-    angular.module('sortApp', [])
-    .controller('mainController', function($scope)
-    		{
-      // create the list  
-      $scope.dress = <%=request.getAttribute("productList")%>
-    });    
-    </script>
+
 </head>
 
 <body>
@@ -81,42 +73,91 @@
 
     <!-- Header -->
     <!-- /.intro-header -->
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-   <!--   <script src="resources/bootstrap/js/ptable.js"></script>-->
 </head>
 <body>
-    <c:url value="D:\apache-tomcat-8.0.33-windows-x64\apache-tomcat-8.0.33\tmpFiles" var="pdimg" />
+    
         <div class="container">
                         <h3>Be Pretty in Pink</h3>                       
          </div>
-   <div class="col-sm-3">
-      <img src="${pdimg}/${product.pdctID}.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>${product.pdctID}<span class="glyphicon glyphicon-hand-up"></span></p>
+   <div class="col-sm-6">
+      <img src="resources/bootstrap/img/intro.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <h3>Be Pretty in Pink</h3>  
     </div>
-                     <div class="col-sm-9">
-<div class="container" ng-app="sortApp" ng-controller="mainController">
+                     <div class="col-sm-6">
+                    <p style="color:maroon">
+                    
+        WE WANT TO MAKE YOU FEEL GOOD TO LOOK GOOD<br>
+        </p>
+        <p style="color:fuchsia">
+PurelyPink is an Indian fashion website that represents style and quality.A tightly edited wardrobe of classic pieces, the collection focuses on longevity and quality rather than flash-in-the-pan trends.<br>
+<font style="color:orange" >"The Independent"</font>
+
+ 
+                    </p>
+   <p style="color:fuchsia">
+          Contemporary design with modern utility, PurelyPink hass an edited collection that is both considered and versatile, combining understated looks with refined styling;
+          produced to be relevant for work and leisure in the knowledge that what separates those worlds is becoming less defined.
+          Inspired by feedback from our dedicated community, our exclusive line of apparel is available in a full range of sizes  because we believe fashion is for every body. We also carry a curated selection of styles from hundreds of independent designers.
+          We have a huge collection of accessories which you will really love....
+                   
+   </p>
+    </div>                
+   <div class="content-section-b">
+
+       <div class="container text-center">    
+  
+  <div class="row">
+    <div class="col-sm-6">
+      
+    </div>
+    <div class="col-sm-6">
+      <img src="resources/bootstrap/img/bag1.jpg" class="img-responsive" style="width:50%" alt="Image">
+      
+    </div>
+    
+    </div>
+
+        </div>
+                
+            
 
         
-      <h1>Product : ${product.category}</h1><br>
-       <h4>ID :  ${product.pdctID}</h4><br>
-        <h4> Price in INR : ${product.price}</h4><br>
-        <h4>Brand you have Chosen : ${product.brand}</h4><br>
-    </div>                
+        <!-- /.container -->
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; PurelyPink 2016. All Rights Reserved</p>
                 </div>
             </div>
         </div>
-        <!-- /.container -->
+    </footer>
 
-    <div>
-    <form action="cartFlow">
-    <input type="hidden" value=${product.pdctID} name="pdctID"/>
-        <input type="hidden" value=${product.category} name="category"/>
-        <input type="hidden" value=${product.brand} name="brand"/>
-        <input type="hidden" value=${product.price} name="price"/>
-        
-    <input type="submit" value="Add to Cart">
-    </form>
-    </div>
+    <!-- jQuery -->
+    <script src="resources/bootstrap/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+
+    
 
 </body>
 </html>
