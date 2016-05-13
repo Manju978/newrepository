@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#aboutus">Who we are</a>
+                        <a href="aboutus">Who we are</a>
                     </li>
                             <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="products">What We Offer
@@ -62,14 +62,14 @@
           <li><a href="products">Bags</a></li> 
         </ul>
       </li> <li>
-                        <a href="#contact">Ring to Us</a>
+                        <a href="contactus">Ring to Us</a>
                     </li>
                      <li>
-                        <a href="#register">Register with Us</a>
+                        <a href="register">Register with Us</a>
                     </li>
                     
                      <li>
-                        <a href="Login">Welcome Back--SignIn</a>
+                        <a href="login">Welcome Back--SignIn</a>
                     </li>
                 </ul>
             </div>

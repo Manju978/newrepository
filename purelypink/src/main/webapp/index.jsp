@@ -57,7 +57,7 @@
         </ul>
       </li>
       <li>
-                        <a href="contact">Ring to Us</a>
+                        <a href="contactus">Ring to Us</a>
                     </li>
                      <li>
                         <a href="register">Register with Us</a>
@@ -217,15 +217,15 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="aboutus">About</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="products">Services</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="contactus">Contact</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; PurelyPink 2016. All Rights Reserved</p>

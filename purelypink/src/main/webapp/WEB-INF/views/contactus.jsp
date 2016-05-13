@@ -54,14 +54,14 @@
           <li><a href="products">Bags</a></li> 
         </ul>
       </li> <li>
-                        <a href="#contact">Ring to Us</a>
+                        <a href="contactus">Ring to Us</a>
                     </li>
                      <li>
-                        <a href="#register">Register with Us</a>
+                        <a href="register">Register with Us</a>
                     </li>
                     
                      <li>
-                        <a href="Login">Welcome Back--SignIn</a>
+                        <a href="login">Welcome Back--SignIn</a>
                     </li>
                 </ul>
             </div>
@@ -80,35 +80,28 @@
                         <h3>Be Pretty in Pink</h3>                       
          </div>
    <div class="col-sm-6">
-      <img src="resources/bootstrap/img/registerimage.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="resources/bootstrap/img/contactus.jpg" class="img-responsive" style="width:100%" alt="Image">
       
     </div>
                      <div class="col-sm-6">
       <form  class="form-" role="form">
   <div class="form-group">
-    <label for="uname">New Pink User:</label>
+    <label for="uname">Pink User:</label>
     <input type="text" class="form-control" id="uname">
   </div>
   <div class="form-group">
-    <label for="phone">My Number:</label>
-    <input type="text" class="form-control" id="num">
+    <label for="phone">Issue:</label>
+    <input type="text" class="form-control" id="issue">
   </div>
    <div class="form-group">
-    <label for="email">Mail me:</label>
+    <label for="email">Mail ID:</label>
     <input type="text" class="form-control" id="email">
   </div>
   <div class="form-group">
-    <label for="pwd">PassWord:</label>
-    <input type="password" class="form-control" id="pwd">
+    <label for="pwd">Number : </label>
+    <input type="password" class="form-control" id="num">
   </div>
-  <div class="form-group">
-    <label for="rpwd">Once More Please:</label>
-    <input type="password" class="form-control" id="rpwd">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> I Agree</label>
-  </div>
-  <button type="submit" class="btn btn-default">Register Me</button>
+  <button type="submit" class="btn btn-default">Log the Issue</button>
 </form>
     </div>                
                 </div>
@@ -118,6 +111,32 @@
         <!-- /.container -->
 
     
+ <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="aboutus">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="products">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="contactus">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; PurelyPink 2016. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

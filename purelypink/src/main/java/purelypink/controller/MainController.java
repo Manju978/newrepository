@@ -53,7 +53,12 @@ public class MainController
 		ModelAndView model=new ModelAndView("aboutus");	
 		return model;
 	}
-	
+	@RequestMapping("/contactus")
+	public ModelAndView hai1()
+	{
+		ModelAndView model=new ModelAndView("contactus");	
+		return model;
+	}
 	@RequestMapping("/products")
 	public ModelAndView hello2(Model model)
 	{
