@@ -95,7 +95,7 @@ PurelyPink is an Indian fashion website that represents style and quality.A tigh
  
                     </p>
    <p style="color:fuchsia">
-          Contemporary design with modern utility, PurelyPink hass an edited collection that is both considered and versatile, combining understated looks with refined styling;
+          Contemporary design with modern utility, PurelyPink has an edited collection that is both considered and versatile, combining understated looks with refined styling;
           produced to be relevant for work and leisure in the knowledge that what separates those worlds is becoming less defined.
           Inspired by feedback from our dedicated community, our exclusive line of apparel is available in a full range of sizes  because we believe fashion is for every body. We also carry a curated selection of styles from hundreds of independent designers.
           We have a huge collection of accessories which you will really love....
