@@ -108,14 +108,14 @@
         <!-- /.container -->
 
     <div>
-    <form action="cartFlow">
+   <!--  <form action="cartFlow">
     <input type="hidden" value=${product.pdctID} name="pdctID"/>
         <input type="hidden" value=${product.category} name="category"/>
         <input type="hidden" value=${product.brand} name="brand"/>
-        <input type="hidden" value=${product.price} name="price"/>
+        <input type="hidden" value=${product.price} name="price"/>-->
         
-    <input type="submit" value="Add to Cart">
-    </form>
+    <a href="cartFlow"><input type="submit" value="Add to Cart"></a>
+   
     </div>
  <footer>
         <div class="container">

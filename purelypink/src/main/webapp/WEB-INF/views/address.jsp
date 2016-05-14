@@ -84,7 +84,7 @@
       
     </div>
                      <div class="col-sm-6">
-      <form  class="form-" role="form" action="submission">
+      <!--<form  class="form-" role="form" action="submission">
   <div class="form-group">
     <label for="uname">Address Line 1:</label>
     <input type="text" class="form-control" id="uname">
@@ -102,7 +102,9 @@
     <input type="text" class="form-control" id="num">
   </div>
   <button type="submit" class="btn btn-default">Place the Order</button>
-</form>
+</form>-->
+<a href="${flowExecutionUrl}&amp;_eventId=submit1">proceed to checkout</a>
+
     </div>                
                 </div>
             </div>

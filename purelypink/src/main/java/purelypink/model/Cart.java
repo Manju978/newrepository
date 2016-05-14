@@ -1,5 +1,6 @@
 package purelypink.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,7 +19,8 @@ import org.hibernate.annotations.IndexColumn;
 
 @Entity
 @Table(name="cartdetails")
-public class Cart {
+public class Cart implements Serializable
+{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

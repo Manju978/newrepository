@@ -108,9 +108,11 @@
         </div>
 
 <div>
-<form action="address">
+<!--  <form action="address">
 <input type="submit" value="Proceed to CheckOut"/>
 </form>
+-->
+<a href="${flowExecutionUrl}&amp;_eventId=submit">proceed to checkout</a>
 </div>
 </body>
 </html>

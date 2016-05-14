@@ -24,10 +24,9 @@ import purelypink.service.ProductService;
 @Controller
 public class AdminController 
 {
-
 @Autowired
 ProductService pservice;
-
+BindingResult result;
 public void setProductService(ProductService ps)
 {
 	this.pservice=ps;
@@ -84,7 +83,9 @@ public String submit(@Valid @ModelAttribute("product")ProductModel product,
 
 @RequestMapping(value = "/deleteproduct", method = RequestMethod.POST)
 public String delete(@ModelAttribute("product")ProductModel product, 
-  BindingResult result, ModelMap model) {
+  BindingResult result, ModelMap model) 
+{
+	
   model.addAttribute("product", product);
   pservice.removeProduct(product.getPdctID());
   ArrayList<ProductModel> p= (ArrayList<ProductModel>) pservice.getproductlist();
@@ -97,8 +98,10 @@ public String delete(@ModelAttribute("product")ProductModel product,
 
 }
 @RequestMapping(value = "/editproduct", method = RequestMethod.POST)
-public String edit(@ModelAttribute("product")ProductModel product, 
-  BindingResult result, ModelMap model) {
+public String edit(@Valid @ModelAttribute("product")ProductModel product, 
+  BindingResult result, ModelMap model) 
+{
+
   model.addAttribute("product", product);
   pservice.updateProduct(product);
   ArrayList<ProductModel> p= (ArrayList<ProductModel>) pservice.getproductlist();

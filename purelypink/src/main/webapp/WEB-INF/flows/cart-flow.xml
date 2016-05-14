@@ -3,5 +3,14 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/webflow
 http://www.springframework.org/schema/webflow/spring-webflow.xsd">
-<view-state id="addtocart" view="/WEB-INF/views/shoppingcart.jsp"/>
+<view-state id="addtocart" view="/WEB-INF/views/shoppingcart.jsp">
+<transition on="submit" to="address"/>
+</view-state>
+<view-state id="address" view="/WEB-INF/views/address.jsp">
+		<transition on="submit1" to="submission"/>
+	</view-state>
+	<view-state id="submission" view="/WEB-INF/views/submission.jsp">
+
+</view-state>
+	
 </flow>
