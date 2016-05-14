@@ -103,7 +103,7 @@
   </div>
   <button type="submit" class="btn btn-default">Place the Order</button>
 </form>-->
-<a href="${flowExecutionUrl}&amp;_eventId=submit1">proceed to checkout</a>
+<a href="${flowExecutionUrl}&amp;_eventId=submit1">Complete the order</a>
 
     </div>                
                 </div>

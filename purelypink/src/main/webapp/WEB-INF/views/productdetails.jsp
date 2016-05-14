@@ -115,7 +115,7 @@
         <input type="hidden" value=${product.price} name="price"/>-->
         
     <a href="cartFlow"><input type="submit" value="Add to Cart"></a>
-   
+    <!-- </form> -->
     </div>
  <footer>
         <div class="container">

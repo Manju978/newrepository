@@ -23,6 +23,7 @@
 			<value>purelypink.model.Cart</value>
 			<value>purelypink.model.Item</value>
 			<value>purelypink.model.UserDetails</value>
+			<value>purelypink.model.Order</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
